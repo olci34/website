@@ -21,7 +21,7 @@ const TypingAnimation = ({delay, text}) => {
     }, [])
 
     return (
-        <Box as="span">
+        <Box mt={1}>
             <motion.span>{slicedText}</motion.span>
             <InfiniteTypingAnimation delay={delay + 1}/>
         </Box>

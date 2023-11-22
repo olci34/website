@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { Box } from "@chakra-ui/react"
 
 const InfiniteTypingAnimation = ({delay}) => {
-    const texts = ["curious mind", "detail oriented", "active learner", "team player", "proactive"]
+    const texts = ["a Software Developer","a curious mind", "detail-oriented", "an active-learner", "a team player", "proactive", "a soccer fan", "self-starter", "a human"]
     const textIndex = useMotionValue(0)
     const currText = useTransform(textIndex, (latest) => texts[latest] || "")
     const count = useMotionValue(0)
@@ -20,7 +20,7 @@ const InfiniteTypingAnimation = ({delay}) => {
             ease: "easeIn",
             repeat: Infinity,
             repeatType: "reverse",
-            repeatDelay: 1,
+            repeatDelay: 0.5,
             onUpdate(latest) {
                 if (latest > 0 && isTyped.get() === true) {
                     isTyped.set(false)
