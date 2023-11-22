@@ -3,7 +3,8 @@ import Layout from '../components/layouts/layout'
 import TypingAnimation from '@/components/typingAnimation'
 import { Canvas } from '@react-three/fiber'
 import Cloud from '@/components/cloud'
-import { TrackballControls } from '@react-three/drei'
+import { Environment, TrackballControls } from '@react-three/drei'
+import CoreSphere from '@/components/coreSphere'
 
 const Home = () => {
 
@@ -28,10 +29,13 @@ const Home = () => {
         </Box>
         
         <Box mt={4} h={56}>
-          <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
+          <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 90 }}>
+            <ambientLight intensity={0.4} position={[0,0,-30]} color="white"/>
             <fog attach="fog" args={['#202025', 0, 80]} />
-            <Cloud count={8} radius={20} />
-            <TrackballControls />
+            <Environment preset="city"/>
+            <Cloud count={8} radius={20}/>
+            <CoreSphere />
+            <TrackballControls/>
           </Canvas>
         </Box>
 

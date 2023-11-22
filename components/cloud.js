@@ -1,7 +1,6 @@
 import { useMemo } from "react"
 import Word from "./word"
 import * as THREE from 'three'
-import { useColorMode } from "@chakra-ui/react"
 
 const skills = [
     [".NET", "REST", "C#"], 
@@ -13,7 +12,7 @@ const skills = [
     ["HTML", "CSS", "SQL"]
 ]
 
-const Cloud = ({count = 4, radius = 20, ...props}) => {
+const Cloud = ({count = 4, radius = 20}) => {
     const words = useMemo(() => {
         const temp = []
         const spherical = new THREE.Spherical()
@@ -26,10 +25,10 @@ const Cloud = ({count = 4, radius = 20, ...props}) => {
             }
         }
         
-          return temp
+        return temp
     }, [count, radius])
     
-    return words.map(([pos, word], index) => <Word key={index} position={pos} children={word} {...props} />)
+    return words.map(([pos, word], index) => <Word key={index} position={pos} children={word}/>)
 }
 
 export default Cloud
