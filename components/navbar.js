@@ -16,6 +16,7 @@ function LinkItem({href, target, path, children, ...props}) {
             bg={isActive ? 'grassGreen' : undefined} 
             color={isActive ? "#202023" : inactiveColor}
             target={target}
+            style={{paddingLeft: '4px', paddingRight: '4px'}}
             {...props}
         >
             {children}
@@ -57,6 +58,7 @@ export default function Navbar(props) {
                     alignItems='center'
                     flexGrow={1}
                     mt={{md: 0}}
+                    justify="space-around"
                 >
                     <LinkItem href="/projects" path={path}>Projects</LinkItem> 
                     <LinkItem href="/posts" path={path}>Posts</LinkItem>

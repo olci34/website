@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { Box } from "@chakra-ui/react"
 
 const InfiniteTypingAnimation = ({delay}) => {
-    const texts = ["a Software Developer","a curious mind", "detail-oriented", "an active-learner", "a team player", "proactive", "a soccer fan", "self-starter", "a human"]
+    const texts = ["a Software Developer","a curious mind", "detail-oriented", "an active-learner", "a team player", "proactive", "a soccer fan", "a self-starter", "a human"]
     const textIndex = useMotionValue(0)
     const currText = useTransform(textIndex, (latest) => texts[latest] || "")
     const count = useMotionValue(0)

@@ -1,6 +1,9 @@
-import { Box, Center, Container, Flex, Heading, Image, useColorModeValue } from '@chakra-ui/react'
+import { Box, Container, Heading, Image, useColorModeValue } from '@chakra-ui/react'
 import Layout from '../components/layouts/layout'
 import TypingAnimation from '@/components/typingAnimation'
+import { Canvas } from '@react-three/fiber'
+import Cloud from '@/components/cloud'
+import { TrackballControls } from '@react-three/drei'
 
 const Home = () => {
 
@@ -9,7 +12,7 @@ const Home = () => {
       <Container mt={4}>
         <Box display="flex" flexDirection={{base: 'column-reverse', md: 'row'}} textAlign="center">
           <Box flexGrow={1} flexDirection="column">
-            <Box as="span">Hi! This is</Box>
+            <Box as="span">Hi! I&apos;m</Box>
             <Heading as="h2">
               Murat Oğulcan Şahin
             </Heading>
@@ -23,6 +26,15 @@ const Home = () => {
             </Box>
           </Box>
         </Box>
+        
+        <Box mt={4} h={56}>
+          <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
+            <fog attach="fog" args={['#202025', 0, 80]} />
+            <Cloud count={8} radius={20} />
+            <TrackballControls />
+          </Canvas>
+        </Box>
+
       </Container>
     </Layout>
   )

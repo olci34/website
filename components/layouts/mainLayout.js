@@ -1,4 +1,4 @@
-import { Box, Container, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Container} from "@chakra-ui/react";
 import Footer from "../footer";
 import Navbar from "../navbar";
 import Head from "next/head";

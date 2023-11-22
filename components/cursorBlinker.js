@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useColorModeValue } from '@chakra-ui/react'
+
 const cursorVariants = {
     blinking: {
         opacity: [0, 0, 1, 1],
