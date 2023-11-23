@@ -3,16 +3,15 @@ import Layout from '../components/layouts/layout'
 import TypingAnimation from '@/components/typingAnimation'
 import { Canvas } from '@react-three/fiber'
 import Cloud from '@/components/cloud'
-import { Environment, Loader, TrackballControls } from '@react-three/drei'
+import { Environment, Loader, OrbitControls } from '@react-three/drei'
 import CoreSphere from '@/components/coreSphere'
 import { Suspense } from 'react'
 
 const Home = () => {
-
   return (
     <Layout>
       <Container mt={4}>
-        <Box display="flex" flexDirection={{base: 'column-reverse', md: 'row'}} textAlign="center">
+        <Box display="flex" flexDirection={{base: 'column-reverse', md: 'row'}} textAlign="center" py={4}>
           <Box flexGrow={1} flexDirection="column">
             <Box as="span">Hi! I&apos;m</Box>
             <Heading as="h2">
@@ -35,9 +34,11 @@ const Home = () => {
               <ambientLight intensity={0.4} position={[0,0,-30]} color="white"/>
               <fog attach="fog" args={['#202025', 0, 80]} />
               <Environment preset="city"/>
-              <Cloud count={8} radius={20}/>
-              <CoreSphere />
-              <TrackballControls noZoom={true}/>
+              <group>
+                <Cloud count={8} radius={20}/>
+                <CoreSphere />
+              </group>
+              <OrbitControls autoRotate={true} enableZoom={false}/>
             </Suspense>
           </Canvas>
           <Loader />

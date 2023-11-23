@@ -18,7 +18,7 @@ const Cloud = ({count = 4, radius = 20}) => {
         const spherical = new THREE.Spherical()
         const phiSpan = Math.PI / (count + 1)
         const thetaSpan = (Math.PI * 2) / count
-
+        
         for (let i = 1; i < count + 1; i++) {
             for (let j = 0; j < count; j++) {
                 temp.push([new THREE.Vector3().setFromSpherical(spherical.set(radius, phiSpan * i, thetaSpan * j)), skills[i%skills.length][j%skills[0].length]])
