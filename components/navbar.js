@@ -32,7 +32,6 @@ export default function Navbar(props) {
             position="fixed"
             as="nav"
             w="100%"
-            p={2}
             css={{backdropFilter: 'blur(5px)'}}
             zIndex={2}
             {...props}

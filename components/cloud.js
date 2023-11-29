@@ -3,13 +3,13 @@ import Word from "./word"
 import * as THREE from 'three'
 
 const skills = [
-    [".NET", "REST", "C#"], 
-    ["TypeScript", "Angular", "Akita"], 
+    ["HTML", "CSS", "SQL"],
+    ["Ruby", "Sinatra", "Rails"],
     ["SSMS", "T-SQL", "SQL Server"],
-    ["Ruby", "Sinatra", "Rails"], 
-    ["Git", "GitHub", "Agile"], 
     ["React", "JavaScript", "NextJS"], 
-    ["HTML", "CSS", "SQL"]
+    [".NET", "REST", "C#"], 
+    ["TypeScript", "Angular", "Akita"],
+    ["Git", "GitHub", "Agile"]
 ]
 
 const Cloud = ({count = 4, radius = 20}) => {
