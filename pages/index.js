@@ -6,7 +6,6 @@ import {
   LinkBox,
   LinkOverlay,
   SimpleGrid,
-  Stepper,
   Text,
   useColorModeValue
 } from '@chakra-ui/react'
