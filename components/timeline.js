@@ -1,26 +1,23 @@
-import { AddIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 import {
   Box,
+  Icon,
+  Link,
   List,
   ListIcon,
   ListItem,
-  OrderedList,
   Step,
   StepDescription,
-  StepIcon,
   StepIndicator,
-  StepNumber,
   StepSeparator,
-  StepStatus,
   StepTitle,
-  Stepper,
-  UnorderedList,
-  useSteps
+  Stepper
 } from '@chakra-ui/react'
 
 const steps = [
   {
     title: 'CATIC',
+    summary: 'Real estate title insurance company - Hartford, CT',
     descriptions: [
       'Re-architectured and migrated the legacy app to a new REST API .NET server and single page Angular app with +29k users.',
       'Enhanced database queries using T-SQL to boost efficiency that resulted ~20% response time.',
@@ -34,6 +31,7 @@ const steps = [
   },
   {
     title: 'Atar Cabos',
+    summary: 'Sailing School - Valencia, Spain',
     descriptions: [
       'Designed and developed the database schema and REST API using Ruby on Rails, utilized eager loading that increased response time 40%.',
       'Built a payment and emailing process using Stripe and SendGrid integration for a B2C, generated +€27k in 6 months.',
@@ -42,33 +40,84 @@ const steps = [
     startDate: '06/2021',
     endDate: 'Present',
     link: 'https://atarcabos.com/'
+  },
+  {
+    title: 'Flatiron School',
+    summary: 'Full Stack Web Development Bootcamp - New York, NY',
+    descriptions: [
+      'Completed JavaScript React and Ruby on Rails full stack web development bootcamp in Flatiron School, NY.',
+      'Equipped with strong knowledge of Object Oriented Programming, functional programming, web scraping, data modeling (ORM), RESTful API, design patterns, AJAX, single page applications, DOM, version control, SQL.',
+      'Collaborated with classmates with React, Redux, Rails, Sinatra stack.'
+    ],
+    startDate: '01/2021',
+    endDate: '05/2021',
+    link: 'https://flatironschool.com/courses/coding-bootcamp/'
+  },
+  {
+    title: 'Mobile App Development',
+    summary: 'iOS Development with Swift UI',
+    descriptions: [
+      'Followed my curiosity of app development and self-learned Swift UI.',
+      'Developed an movie recommendation iOS app, utilizing Google Cloud Storage.',
+      'Contributed in building a feature for Moodivation app launched in App Store and also built a web control panel for admins using Ruby on Rails.'
+    ],
+    startDate: '05/2020',
+    endDate: '03/2021',
+    link: 'https://apps.apple.com/us/app/moodivation-daily-motivation/id1529743691'
+  },
+  {
+    title: 'Relocate to US',
+    summary: '',
+    descriptions: [
+      'Moved to US right after graduating to obtain certificates of import and export.',
+      'Obtained TOEFL Certification.',
+      'Drove Uber and Lyft for 5 years in NYC, which convinced me to follow my passion of software development.'
+    ],
+    startDate: '12/2015',
+    endDate: '03/2021',
+    link: undefined
+  },
+  {
+    title: 'Istanbul University',
+    summary: 'Bachelors of Engineering - Istanbul, Turkiye',
+    descriptions: [
+      'Graduated from Maritime Transportation and Management Engineering (BS) in Istanbul, Turkiye.',
+      'Studied Statistics, Calculus, Differential Equations, MATLAB related to CS.'
+    ],
+    startDate: '09/2011',
+    endDate: '07/2015',
+    link: 'https://denizulastirmamuhendislik.iuc.edu.tr/en/'
   }
 ]
 
 const Timeline = () => {
-  const { activeStep, setActiveStep } = useSteps({
-    index: 1,
-    count: steps.length
-  })
-
   return (
     <Box>
-      <Stepper size="sm" index={activeStep} orientation="vertical" gap={2}>
+      <Stepper size="sm" orientation="vertical" gap={2} colorScheme="green">
         {steps.map((step, index) => (
-          <Step key={index} onClick={() => setActiveStep(index)}>
-            <StepIndicator>
-              <StepStatus
-                complete={<StepIcon />}
-                incomplete={<StepNumber />}
-                active={<StepNumber />}
-              />
-            </StepIndicator>
+          <Step key={index}>
+            <StepIndicator />
 
             <Box>
-              <StepTitle>{step.title}</StepTitle>
-              {step.descriptions.map((desc, idx) => (
-                <StepDescription key={idx}>- {desc}</StepDescription>
-              ))}
+              <StepTitle>
+                <Link href={step.link} target="_blank">
+                  {step.title}
+                </Link>
+                <StepDescription
+                  style={{ display: 'inline-block', marginLeft: '1em' }}
+                >
+                  {step.startDate} - {step.endDate}
+                </StepDescription>
+              </StepTitle>
+              <StepDescription>{step.summary}</StepDescription>
+              <List fontSize={['xs', 'xs', 'sm']}>
+                {step.descriptions.map((desc, idx) => (
+                  <ListItem key={idx}>
+                    <ListIcon as={ChevronRightIcon} />
+                    {desc}
+                  </ListItem>
+                ))}
+              </List>
             </Box>
 
             <StepSeparator />

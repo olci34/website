@@ -21,7 +21,7 @@ import Timeline from '@/components/timeline'
 const Home = () => {
   return (
     <Layout>
-      <Container mt={4}>
+      <Container mt={4} maxW="container.md">
         <Box
           display="flex"
           flexDirection={{ base: 'column-reverse', md: 'row' }}
@@ -53,8 +53,8 @@ const Home = () => {
           </Box>
         </Box>
 
-        <Box my={4} h={56}>
-          <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 90 }}>
+        <Box my={4} h={{ base: 'xs', md: 'sm' }}>
+          <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -32], fov: 90 }}>
             <Suspense>
               <ambientLight
                 intensity={0.4}
@@ -77,16 +77,16 @@ const Home = () => {
           <Heading as="h3" variant="section-title">
             About
           </Heading>
-          <Box as="p" fontSize={['sm', 'sm', 'md']}>
+          <Box as="p" fontSize={['md', 'md', 'lg']}>
             Software Developer with 2+ years of professional experience, and
             still as passionate and curious as the day one. I enjoy{' '}
             <strong>
               creating, problem solving, learning and collaborating
             </strong>
-            . I value <strong>innovation, efficiency and teamwork</strong>.
-            Proficient in .NET, Angular, React and Rails frameworks. For more
-            about the tech stack I use, spin around my &quot;Skills Sphere&quot;
-            above.
+            . I value <strong>innovation, efficiency</strong> and{' '}
+            <strong>teamwork</strong>. Proficient in .NET, Angular, React and
+            Rails frameworks. For more about the tech stack I use, spin around
+            my &quot;Skills Sphere&quot; above.
           </Box>
         </Box>
 
