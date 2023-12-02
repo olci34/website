@@ -1,6 +1,10 @@
+import { AddIcon } from '@chakra-ui/icons'
 import {
   Box,
+  List,
+  ListIcon,
   ListItem,
+  OrderedList,
   Step,
   StepDescription,
   StepIcon,
@@ -62,13 +66,9 @@ const Timeline = () => {
 
             <Box>
               <StepTitle>{step.title}</StepTitle>
-              <StepDescription>
-                <UnorderedList>
-                  {step.descriptions.map((desc, idx) => (
-                    <ListItem key={idx}>{desc}</ListItem>
-                  ))}
-                </UnorderedList>
-              </StepDescription>
+              {step.descriptions.map((desc, idx) => (
+                <StepDescription key={idx}>- {desc}</StepDescription>
+              ))}
             </Box>
 
             <StepSeparator />
