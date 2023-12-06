@@ -9,7 +9,6 @@ import {
 import DrawerMenu from './drawerMenu'
 import Link from 'next/link'
 import ThemeButton from './themeButton'
-import NextLink from 'next/link'
 
 function LinkItem({ href, target, path, children, ...props }) {
   const isActive = href === path
@@ -17,10 +16,9 @@ function LinkItem({ href, target, path, children, ...props }) {
 
   return (
     <Link
-      // as={NextLink}
       href={href}
       scroll={false}
-      bg={isActive ? 'grassGreen' : undefined}
+      bg={isActive ? 'red' : undefined}
       color={isActive ? '#202023' : inactiveColor}
       target={target}
       style={{ paddingLeft: '4px', paddingRight: '4px' }}
@@ -52,9 +50,11 @@ export default function Navbar(props) {
         justify="space-between"
       >
         <Flex align="center" mr={10}>
-          <Heading as="h2" size="lg">
-            LOGO
-          </Heading>
+          <Link href="/">
+            <Heading as="h2" size="lg">
+              LOGO
+            </Heading>
+          </Link>
         </Flex>
 
         <Stack
@@ -66,8 +66,8 @@ export default function Navbar(props) {
           mt={{ md: 0 }}
           justify="space-around"
         >
-          <LinkItem href="/projects" path={path}>
-            Projects
+          <LinkItem href="/portfolio" path={path}>
+            Portfolio
           </LinkItem>
           <LinkItem href="/posts" path={path}>
             Posts

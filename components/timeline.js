@@ -1,7 +1,6 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import {
   Box,
-  Icon,
   Link,
   List,
   ListIcon,
@@ -58,7 +57,7 @@ const steps = [
     summary: 'iOS Development with Swift UI',
     descriptions: [
       'Followed my curiosity of app development and self-learned Swift UI.',
-      'Developed an movie recommendation iOS app, utilizing Google Cloud Storage.',
+      'Developed a multiple iOS apps as personal projects, utilized Google Cloud Storage.',
       'Contributed in building a feature for Moodivation app launched in App Store and also built a web control panel for admins using Ruby on Rails.'
     ],
     startDate: '05/2020',
@@ -92,8 +91,14 @@ const steps = [
 
 const Timeline = () => {
   return (
-    <Box>
-      <Stepper size="sm" orientation="vertical" gap={2} colorScheme="green">
+    <Box py={4}>
+      <Stepper
+        size="sm"
+        orientation="vertical"
+        gap={2}
+        colorScheme="green"
+        showLastSeparator={true}
+      >
         {steps.map((step, index) => (
           <Step key={index}>
             <StepIndicator />
