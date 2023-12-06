@@ -27,6 +27,8 @@ const Home = () => {
           flexDirection={{ base: 'column-reverse', md: 'row' }}
           textAlign="center"
           py={4}
+          h={{ base: 'min-content', md: '3xs' }}
+          alignItems="center"
         >
           <Box flexGrow={1} flexDirection="column">
             <Box as="span" fontSize={['sm', 'sm', 'md']}>
@@ -38,7 +40,8 @@ const Home = () => {
 
           <Box flexShrink={0} textAlign="center">
             <Box
-              boxSize={['120px', '120px']}
+              h={{ base: 36, md: 40 }}
+              w={{ base: 36, md: 40 }}
               display="inline-block"
               borderRadius="full"
               borderWidth={2}
@@ -62,7 +65,7 @@ const Home = () => {
                 color="white"
               />
               <fog attach="fog" args={['#202025', 0, 80]} />
-              <Environment preset="city" />
+              {/* <Environment preset="city" /> */}
               <group>
                 <Cloud count={8} radius={20} />
                 <CoreSphere />
@@ -85,14 +88,14 @@ const Home = () => {
             </strong>
             . I value <strong>innovation, efficiency</strong> and{' '}
             <strong>teamwork</strong>. Proficient in .NET, Angular, React and
-            Rails frameworks. For more about the tech stack I use, spin around
-            my &quot;Skills Sphere&quot; above.
+            Rails frameworks. To learn more about the tech stack I use, spin
+            around my &quot;Skills Sphere&quot; above.
           </Box>
         </Box>
 
         <Box>
           <Heading as="h3" variant="section-title">
-            Experience
+            Timeline
           </Heading>
           <Timeline />
         </Box>
