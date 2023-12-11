@@ -1,7 +1,6 @@
 import Layout from '@/components/layouts/layout'
 import { Box, Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import atarcabosPhoto from '../../public/atar-cabos.png'
-import routingPostThumbnail from '../../public/react-routing.png'
 import GridItem from '@/components/gridItem'
 
 const Portfolio = () => {

@@ -3,7 +3,7 @@ import Footer from '../footer'
 import Navbar from '../navbar'
 import Head from 'next/head'
 
-const MainLayout = ({ children, router }) => {
+const MainLayout = ({ children }) => {
   return (
     <Box as="main" pb={8}>
       <Head>
@@ -13,7 +13,7 @@ const MainLayout = ({ children, router }) => {
         <title>Ogulcan Portfolio</title>
       </Head>
 
-      <Navbar path={router.asPath} />
+      <Navbar />
 
       <Container maxW="container.lg" pt={16}>
         {children}

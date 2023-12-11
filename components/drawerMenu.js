@@ -8,16 +8,19 @@ import {
   DrawerOverlay,
   Icon,
   List,
-  ListIcon,
   ListItem,
   useDisclosure
 } from '@chakra-ui/react'
 import { useRef } from 'react'
-import { CheckCircleIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon } from '@chakra-ui/icons'
+import { LinkItem } from './navbar'
+import { SiMinutemailer } from 'react-icons/si'
+import { FaBriefcase, FaPencilAlt, FaLinkedin, FaGithub } from 'react-icons/fa'
 
-export default function DrawerMenu() {
+export default function DrawerMenu(props) {
   const menuBtnRef = useRef()
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const { path } = props
 
   return (
     <Box>
@@ -37,8 +40,42 @@ export default function DrawerMenu() {
           <DrawerBody>
             <List spacing={2}>
               <ListItem>
-                <ListIcon as={CheckCircleIcon} color="green.500" />
-                Item1
+                <LinkItem href="/portfolio" path={path}>
+                  <FaBriefcase />
+                  Portfolio
+                </LinkItem>
+              </ListItem>
+              <ListItem>
+                <LinkItem href="/posts" path={path}>
+                  <FaPencilAlt />
+                  Posts
+                </LinkItem>
+              </ListItem>
+              <ListItem>
+                <LinkItem
+                  href="https://github.com/olci34"
+                  target="_blank"
+                  path={path}
+                >
+                  <FaGithub />
+                  GitHub
+                </LinkItem>
+              </ListItem>
+              <ListItem>
+                <LinkItem
+                  href="https://www.linkedin.com/in/muratogulcansahin/"
+                  target="_blank"
+                  path={path}
+                >
+                  <FaLinkedin />
+                  LinkedIn
+                </LinkItem>
+              </ListItem>
+              <ListItem>
+                <LinkItem href="mailto:muratogulcansahin@gmail.com" path={path}>
+                  <SiMinutemailer />
+                  Email
+                </LinkItem>
               </ListItem>
             </List>
           </DrawerBody>

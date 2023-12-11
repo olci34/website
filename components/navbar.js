@@ -4,34 +4,50 @@ import {
   Flex,
   Heading,
   Stack,
+  Text,
   useColorModeValue
 } from '@chakra-ui/react'
 import DrawerMenu from './drawerMenu'
 import Link from 'next/link'
 import ThemeButton from './themeButton'
+import { useRouter } from 'next/router'
+import { SiMinutemailer } from 'react-icons/si'
+import { FaBriefcase, FaPencilAlt, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { DiTerminal } from 'react-icons/di'
 
-function LinkItem({ href, target, path, children, ...props }) {
+export function LinkItem({ href, target, path, children, ...props }) {
   const isActive = href === path
-  const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
+  const textDecorColor = useColorModeValue('red', 'orange')
 
   return (
     <Link
       href={href}
       scroll={false}
-      bg={isActive ? 'red' : undefined}
-      color={isActive ? '#202023' : inactiveColor}
       target={target}
-      style={{ paddingLeft: '4px', paddingRight: '4px' }}
-      prefetch={false}
+      style={{
+        paddingLeft: '4px',
+        paddingRight: '4px'
+      }}
       {...props}
     >
-      {children}
+      <Text
+        as="span"
+        textDecoration={isActive ? 'underline' : 'none'}
+        textUnderlineOffset={4}
+        textDecorationThickness={2}
+        textDecorationColor={isActive ? textDecorColor : undefined}
+        display="inline-flex"
+        alignItems="center"
+        gap={1}
+      >
+        {children}
+      </Text>
     </Link>
   )
 }
 
-export default function Navbar(props) {
-  const { path } = props
+export default function Navbar() {
+  const router = useRouter()
 
   return (
     <Box
@@ -40,7 +56,6 @@ export default function Navbar(props) {
       w="100%"
       css={{ backdropFilter: 'blur(5px)' }}
       zIndex={2}
-      {...props}
     >
       <Container
         display="flex"
@@ -52,8 +67,13 @@ export default function Navbar(props) {
       >
         <Flex align="center" mr={10}>
           <Link href="/">
-            <Heading as="h2" size="lg">
-              LOGO
+            <Heading
+              as="h2"
+              size="lg"
+              display="inline-flex"
+              alignItems="center"
+            >
+              <DiTerminal size="2em" />
             </Heading>
           </Link>
         </Flex>
@@ -67,19 +87,36 @@ export default function Navbar(props) {
           mt={{ md: 0 }}
           justify="space-around"
         >
-          <LinkItem href="/portfolio" path={path}>
+          <LinkItem href="/portfolio" path={router.asPath}>
+            <FaBriefcase />
             Portfolio
           </LinkItem>
-          <LinkItem href="/posts" path={path}>
+          <LinkItem href="/posts" path={router.asPath}>
+            <FaPencilAlt />
             Posts
           </LinkItem>
-          <LinkItem href="/" path={path}>
+          <LinkItem
+            href="https://github.com/olci34"
+            target="_blank"
+            path={router.asPath}
+          >
+            <FaGithub />
             GitHub
           </LinkItem>
-          <LinkItem href="/" path={path}>
+          <LinkItem
+            href="https://www.linkedin.com/in/muratogulcansahin/"
+            target="_blank"
+            path={router.asPath}
+          >
+            <FaLinkedin />
             LinkedIn
           </LinkItem>
-          <LinkItem href="/" path={path}>
+          <LinkItem
+            href="mailto:muratogulcansahin@gmail.com"
+            target="_blank"
+            path={router.asPath}
+          >
+            <SiMinutemailer />
             Email
           </LinkItem>
         </Stack>
@@ -87,7 +124,7 @@ export default function Navbar(props) {
         <Box flex={1} align="right">
           <ThemeButton />
           <Box display={{ base: 'inline-block', md: 'none' }}>
-            <DrawerMenu />
+            <DrawerMenu path={router.asPath} />
           </Box>
         </Box>
       </Container>

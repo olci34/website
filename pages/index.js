@@ -3,10 +3,6 @@ import {
   Container,
   Heading,
   Image,
-  LinkBox,
-  LinkOverlay,
-  SimpleGrid,
-  Text,
   useColorModeValue
 } from '@chakra-ui/react'
 import Layout from '../components/layouts/layout'
@@ -25,6 +21,7 @@ const Home = () => {
         mt={4}
         maxW="container.md"
         display="flex"
+        minHeight="100vh"
         flexDirection="column"
       >
         <Box

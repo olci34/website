@@ -17,7 +17,7 @@ const CoreSphere = () => {
         transparent={true}
         flatShading={true}
       />
-      <Sparkles count={50} scale={19} size={15} speed={0.5} color={color} />
+      <Sparkles count={50} scale={19} size={14} speed={0.5} color={color} />
     </mesh>
   )
 }
