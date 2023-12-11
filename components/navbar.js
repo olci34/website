@@ -22,6 +22,7 @@ function LinkItem({ href, target, path, children, ...props }) {
       color={isActive ? '#202023' : inactiveColor}
       target={target}
       style={{ paddingLeft: '4px', paddingRight: '4px' }}
+      prefetch={false}
       {...props}
     >
       {children}

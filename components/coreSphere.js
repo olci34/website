@@ -3,10 +3,11 @@ import { Sparkles } from '@react-three/drei'
 import * as THREE from 'three'
 
 const CoreSphere = () => {
-  const sparkleColors = useColorModeValue('#285E61', '#ffffff')
+  const sparkleColorValue = useColorModeValue('#285E61', '#ffffff')
+  const color = new THREE.Color(sparkleColorValue)
   return (
     <mesh>
-      <sphereGeometry args={[15, 32, 16]} />
+      <sphereGeometry args={[15, 42, 18]} />
       <meshStandardMaterial
         color="#ffffff"
         metalness={0}
@@ -16,13 +17,7 @@ const CoreSphere = () => {
         transparent={true}
         flatShading={true}
       />
-      <Sparkles
-        count={50}
-        scale={19}
-        size={15}
-        speed={0.5}
-        color={new THREE.Color(sparkleColors)}
-      />
+      <Sparkles count={50} scale={19} size={15} speed={0.5} color={color} />
     </mesh>
   )
 }
