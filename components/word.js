@@ -14,6 +14,7 @@ const Word = ({ children, ...props }) => {
     'material-toneMapped': false
   }
   const ref = useRef()
+  const [selected, setSelected] = useState(false)
   const [hovered, setHovered] = useState(false)
   const over = e => (e.stopPropagation(), setHovered(true))
   const out = () => setHovered(false)
@@ -29,7 +30,7 @@ const Word = ({ children, ...props }) => {
     ref.current.quaternion.copy(camera.quaternion)
     // Animate font color
     ref.current.material.color.lerp(
-      color.set(hovered ? '#E53E3E' : textColor),
+      color.set(hovered || selected ? '#48BB78' : textColor),
       0.1
     )
   })
@@ -38,7 +39,7 @@ const Word = ({ children, ...props }) => {
       ref={ref}
       onPointerOver={over}
       onPointerOut={out}
-      onClick={() => console.log('clicked')}
+      onClick={() => setSelected(!selected)}
       {...props}
       {...fontProps}
     >

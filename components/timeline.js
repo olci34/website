@@ -95,12 +95,12 @@ const Timeline = () => {
       <Stepper
         size="sm"
         orientation="vertical"
-        gap={2}
+        gap={0}
         colorScheme="green"
         showLastSeparator={true}
       >
         {steps.map((step, index) => (
-          <Step key={index}>
+          <Step key={index} style={{ paddingBottom: '1rem' }}>
             <StepIndicator />
 
             <Box>

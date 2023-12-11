@@ -13,7 +13,7 @@ import Layout from '../components/layouts/layout'
 import TypingAnimation from '@/components/typingAnimation'
 import { Canvas } from '@react-three/fiber'
 import Cloud from '@/components/cloud'
-import { Environment, Loader, OrbitControls } from '@react-three/drei'
+import { Loader, OrbitControls } from '@react-three/drei'
 import CoreSphere from '@/components/coreSphere'
 import { Suspense } from 'react'
 import Timeline from '@/components/timeline'
@@ -21,12 +21,16 @@ import Timeline from '@/components/timeline'
 const Home = () => {
   return (
     <Layout>
-      <Container mt={4} maxW="container.md">
+      <Container
+        mt={4}
+        maxW="container.md"
+        display="flex"
+        flexDirection="column"
+      >
         <Box
           display="flex"
           flexDirection={{ base: 'column-reverse', md: 'row' }}
           textAlign="center"
-          py={4}
           h={{ base: 'min-content', md: '3xs' }}
           alignItems="center"
         >
@@ -56,16 +60,15 @@ const Home = () => {
           </Box>
         </Box>
 
-        <Box my={4} h={{ base: 'xs', md: 'sm' }}>
+        <Box h={{ base: 'xs', md: 'sm' }}>
           <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -32], fov: 90 }}>
             <Suspense>
               <ambientLight
-                intensity={0.4}
+                intensity={3}
                 position={[0, 0, -30]}
                 color="white"
               />
-              <fog attach="fog" args={['#202025', 0, 80]} />
-              {/* <Environment preset="city" /> */}
+              <fog attach="fog" args={['#202025', 0, 38]} />
               <group>
                 <Cloud count={8} radius={20} />
                 <CoreSphere />
@@ -76,7 +79,7 @@ const Home = () => {
           <Loader />
         </Box>
 
-        <Box my={4}>
+        <Box>
           <Heading as="h3" variant="section-title">
             About
           </Heading>
@@ -93,101 +96,11 @@ const Home = () => {
           </Box>
         </Box>
 
-        <Box>
+        <Box my={4}>
           <Heading as="h3" variant="section-title">
             Timeline
           </Heading>
           <Timeline />
-        </Box>
-
-        <Box my={4}>
-          <Heading as="h3" variant="section-title">
-            Projects
-          </Heading>
-          <SimpleGrid columns={[1, 1, 2]} gap={6}>
-            <LinkBox>
-              <Image
-                src="/pp.jpg"
-                alt="Murat Ogulcan Sahin"
-                borderRadius="xl"
-                h={[28, 28, 40]}
-              />
-              <LinkOverlay as="div">
-                <Text
-                  mt={2}
-                  fontSize={['sm', 'md', 'lg']}
-                  fontWeight="semibold"
-                >
-                  Project1
-                </Text>
-                <Text fontSize={['sm', 'sm', 'md']}>project description</Text>
-              </LinkOverlay>
-            </LinkBox>
-            <LinkBox>
-              <Image
-                src="/atar-cabos.png"
-                alt="Atar Cabos Thumbnail"
-                borderRadius="xl"
-                h={[28, 28, 40]}
-              />
-              <LinkOverlay as="div">
-                <Text
-                  mt={2}
-                  fontSize={['sm', 'md', 'lg']}
-                  fontWeight="semibold"
-                >
-                  Atar Cabos
-                </Text>
-                <Text fontSize={['sm', 'sm', 'md']}>
-                  Online sailing education platform
-                </Text>
-              </LinkOverlay>
-            </LinkBox>
-          </SimpleGrid>
-        </Box>
-
-        <Box my={4}>
-          <Heading as="h3" variant="section-title">
-            Posts
-          </Heading>
-          <SimpleGrid columns={[1, 1, 2]} gap={6}>
-            <LinkBox w="100%">
-              <Image
-                src="https://media.giphy.com/media/IfbfrgdqP0SxhAAD6h/giphy.gif"
-                alt="random img"
-                borderRadius="xl"
-                h={[28, 28, 40]}
-              />
-              <LinkOverlay as="div">
-                <Text
-                  mt={2}
-                  fontSize={['sm', 'md', 'lg']}
-                  fontWeight="semibold"
-                >
-                  Post1
-                </Text>
-                <Text fontSize={['sm', 'sm', 'md']}>Post description</Text>
-              </LinkOverlay>
-            </LinkBox>
-            <LinkBox w="100%">
-              <Image
-                src="https://media.giphy.com/media/IfbfrgdqP0SxhAAD6h/giphy.gif"
-                alt="random img"
-                borderRadius="xl"
-                h={[28, 28, 40]}
-              />
-              <LinkOverlay as="div">
-                <Text
-                  mt={2}
-                  fontSize={['sm', 'md', 'lg']}
-                  fontWeight="semibold"
-                >
-                  Post1
-                </Text>
-                <Text fontSize={['sm', 'sm', 'md']}>Post description</Text>
-              </LinkOverlay>
-            </LinkBox>
-          </SimpleGrid>
         </Box>
       </Container>
     </Layout>
