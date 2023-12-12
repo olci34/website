@@ -2,7 +2,7 @@ import {
   Box,
   Container,
   Heading,
-  Image,
+  Spinner,
   useColorModeValue
 } from '@chakra-ui/react'
 import Layout from '../components/layouts/layout'
@@ -13,6 +13,8 @@ import { Loader, OrbitControls } from '@react-three/drei'
 import CoreSphere from '@/components/coreSphere'
 import { Suspense } from 'react'
 import Timeline from '@/components/timeline'
+import Image from 'next/image'
+import profilePhoto from '../public/pp.jpeg'
 
 const Home = () => {
   return (
@@ -52,14 +54,25 @@ const Home = () => {
               )}
               overflow="hidden"
             >
-              <Image src="/pp.jpg" alt="Murat Ogulcan Sahin" />
+              <Image src={profilePhoto} alt="Murat Ogulcan Sahin" />
             </Box>
           </Box>
         </Box>
 
         <Box h={{ base: 'xs', md: 'sm' }}>
-          <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -32], fov: 90 }}>
-            <Suspense>
+          <Suspense
+            fallback={
+              <Spinner
+                size="xl"
+                position="absolute"
+                left="50%"
+                top="50%"
+                ml="calc(0px - var(--spinner-size) / 2)"
+                mt="calc(0px - var(--spinner-size))"
+              />
+            }
+          >
+            <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -32], fov: 90 }}>
               <ambientLight
                 intensity={3}
                 position={[0, 0, -30]}
@@ -67,13 +80,14 @@ const Home = () => {
               />
               <fog attach="fog" args={['#202025', 0, 38]} />
               <group>
-                <Cloud count={8} radius={20} />
-                <CoreSphere />
+                <Suspense fallback={<Loader />}>
+                  <Cloud count={8} radius={20} />
+                  <CoreSphere />
+                </Suspense>
               </group>
               <OrbitControls autoRotate={true} enableZoom={false} />
-            </Suspense>
-          </Canvas>
-          <Loader />
+            </Canvas>
+          </Suspense>
         </Box>
 
         <Box>
