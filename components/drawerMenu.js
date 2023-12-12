@@ -19,7 +19,7 @@ import { FaBriefcase, FaPencilAlt, FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export default function DrawerMenu(props) {
   const menuBtnRef = useRef()
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  let { isOpen, onOpen, onClose } = useDisclosure()
   const { path } = props
 
   return (
@@ -39,19 +39,19 @@ export default function DrawerMenu(props) {
           <DrawerCloseButton />
           <DrawerBody>
             <List spacing={2}>
-              <ListItem>
+              <ListItem onClick={onClose}>
                 <LinkItem href="/portfolio" path={path}>
                   <FaBriefcase />
                   Portfolio
                 </LinkItem>
               </ListItem>
-              <ListItem>
+              <ListItem onClick={onClose}>
                 <LinkItem href="/posts" path={path}>
                   <FaPencilAlt />
                   Posts
                 </LinkItem>
               </ListItem>
-              <ListItem>
+              <ListItem onClick={onClose}>
                 <LinkItem
                   href="https://github.com/olci34"
                   target="_blank"
@@ -61,7 +61,7 @@ export default function DrawerMenu(props) {
                   GitHub
                 </LinkItem>
               </ListItem>
-              <ListItem>
+              <ListItem onClick={onClose}>
                 <LinkItem
                   href="https://www.linkedin.com/in/muratogulcansahin/"
                   target="_blank"
@@ -71,7 +71,7 @@ export default function DrawerMenu(props) {
                   LinkedIn
                 </LinkItem>
               </ListItem>
-              <ListItem>
+              <ListItem onClick={onClose}>
                 <LinkItem href="mailto:muratogulcansahin@gmail.com" path={path}>
                   <SiMinutemailer />
                   Email
