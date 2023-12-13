@@ -2,7 +2,6 @@ import { Box, Container } from '@chakra-ui/react'
 import Footer from '../footer'
 import Navbar from '../navbar'
 import Head from 'next/head'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const MainLayout = ({ children }) => {
   return (
@@ -20,7 +19,6 @@ const MainLayout = ({ children }) => {
         {children}
         <Footer />
       </Container>
-      <SpeedInsights />
     </Box>
   )
 }
