@@ -102,7 +102,6 @@ const Timeline = () => {
         {steps.map((step, index) => (
           <Step key={index} style={{ paddingBottom: '1rem' }}>
             <StepIndicator />
-
             <Box>
               <StepTitle>
                 <Link href={step.link} target="_blank">
@@ -124,7 +123,6 @@ const Timeline = () => {
                 ))}
               </List>
             </Box>
-
             <StepSeparator />
           </Step>
         ))}
