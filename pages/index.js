@@ -95,7 +95,7 @@ const Home = () => {
             About
           </Heading>
           <Box as="p" fontSize={['md', 'md', 'lg']}>
-            Software Developer with 2+ years of professional experience, and
+            Software Developer with 3+ years of professional experience, and
             still as passionate and curious as the day one. I enjoy{' '}
             <strong>
               creating, problem solving, learning and collaborating

@@ -18,11 +18,12 @@ const steps = [
     title: 'CATIC',
     summary: 'Real estate title insurance company - Hartford, CT',
     descriptions: [
-      'Re-architectured and migrated the legacy app to a new REST API .NET server and single page Angular app with +29k users.',
-      'Enhanced database queries using T-SQL to boost efficiency that resulted ~20% response time.',
-      'Integrated business partners` APIs to expand revenue sources, generated +$72k in 6 months.',
-      'Transformed reusable Angular components and accelerated load time by utilizing lazy loading.',
-      'Collaborated in an agile setting for technical design of backend and frontend features to ensure high-quality and consistent codebase.'
+      'Engineered and maintained solutions for a number of .NET 6+ REST APIs and Angular single page applications (SPA) that are hosted in Azure cloud-based Service Oriented Architecture (SOA), and used by +30k users.',
+      'Refactored data models with Entity Framework ORM (EF 5+) and generated performant relational database queries in T-SQL using SQL Server (RDBMS) that resulted in ~20% faster response time.',
+      'Scoped and led complex third party integration projects to expand revenue resources, generating +$72k in 6 months.',
+      'Built reusable Angular (v15+) components, utilized lazy loading and caching to accelerate load time. Adhered to Akita state management pattern. Applied UI frameworks like Bootstrap, Angular Material, Tailwind CSS for styling.',
+      'Collaborated with other engineers for technical design and implementation of new features across the stack (backend, frontend and database).',
+      'Utilized Azure pipeline tools to manage CI/CD process that improve software development life cycle (SDLC) reliability.'
     ],
     startDate: '01/2022',
     endDate: 'Present',
@@ -32,9 +33,9 @@ const steps = [
     title: 'Atar Cabos',
     summary: 'Sailing School - Valencia, Spain',
     descriptions: [
-      'Designed and developed the database schema and REST API using Ruby on Rails, utilized eager loading that increased response time 40%.',
-      'Built a payment and emailing process using Stripe and SendGrid integration for a B2C, generated +€27k in 6 months.',
-      'Implemented responsive UI with embedded Ruby templates and bootstrap, provided 30% faster load time with partial rendering and caching.'
+      'Architected and developed the database schema and REST API using Ruby on Rails, utilized eager loading with Active Record queries that increased response time by 40%.',
+      'Implemented a robust payment and email process for a B2C platform integrating Stripe and SendGrid, generating over €27k within 6 month.',
+      'Designed a responsive UI with embedded Ruby templates and Bootstrap, provided 30% faster load time with partial rendering and caching.'
     ],
     startDate: '06/2021',
     endDate: 'Present',
