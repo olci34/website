@@ -1,8 +1,10 @@
 import {
   Box,
   Container,
+  HStack,
   Heading,
   Spinner,
+  Text,
   useColorModeValue
 } from '@chakra-ui/react'
 import Layout from '../components/layouts/layout'
@@ -15,6 +17,11 @@ import { Suspense } from 'react'
 import Timeline from '@/components/timeline'
 import Image from 'next/image'
 import profilePhoto from '../public/pp.jpeg'
+import {
+  ArrowBackIcon,
+  ArrowForwardIcon,
+  ArrowRightIcon
+} from '@chakra-ui/icons'
 
 const Home = () => {
   return (
@@ -87,10 +94,15 @@ const Home = () => {
               </group>
               <OrbitControls autoRotate={true} enableZoom={false} />
             </Canvas>
+            <HStack justify="center" color="gray.300">
+              <ArrowBackIcon />
+              <Text fontSize="sm">Drag Sphere</Text>
+              <ArrowForwardIcon />
+            </HStack>
           </Suspense>
         </Box>
 
-        <Box>
+        <Box marginY={4}>
           <Heading as="h3" variant="section-title">
             About
           </Heading>
