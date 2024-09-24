@@ -5,11 +5,12 @@ import * as THREE from 'three'
 const skills = [
   ['HTML', 'CSS', 'SQL'],
   ['Ruby', 'Sinatra', 'Rails'],
-  ['SSMS', 'T-SQL', 'SQL Server'],
+  ['GraphQL', 'RDBMS', 'SQL Server'],
   ['React', 'JavaScript', 'NextJS'],
   ['.NET', 'REST', 'C#'],
+  ['Python', 'FastAPI', 'Flask'],
   ['TypeScript', 'Angular', 'Akita'],
-  ['Git', 'GitHub', 'Agile']
+  ['Git', 'GCP', 'Azure']
 ]
 
 const Cloud = ({ count = 4, radius = 20 }) => {

@@ -110,12 +110,15 @@ const Home = () => {
             Software Developer with 3+ years of professional experience, and
             still as passionate and curious as the day one. I enjoy{' '}
             <strong>
-              creating, problem solving, learning and collaborating
+              creating, problem solving, active-learning and collaborating
             </strong>
             . I value <strong>innovation, efficiency</strong> and{' '}
-            <strong>teamwork</strong>. Proficient in .NET, Angular, React and
-            Rails frameworks. To learn more about the tech stack I use, spin
-            around my &quot;Skills Sphere&quot; above.
+            <strong>teamwork</strong>. Proficient in{' '}
+            <strong>
+              C#, Python, TypeScript, Ruby, Angular, React, .NET, Flask{' '}
+            </strong>{' '}
+            modern programming languages and frameworks. To learn more about the
+            tech stack I use, spin around my &quot;Skills Sphere&quot; above.
           </Box>
         </Box>
 

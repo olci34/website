@@ -15,35 +15,38 @@ import {
 
 const steps = [
   {
-    title: 'CATIC',
-    summary: 'Real estate title insurance company - Hartford, CT',
+    title: 'CATIC (C#, Python, TypeScript, Angular, .NET 6+)',
+    summary:
+      'National title insurance underwriting company that helps real estate attorneys and over 30,000 independent title agencies in the closing process, ranked 9th largest in the US.',
     descriptions: [
+      'Optimized database queries (SQL Server) through indexing, query partitioning and nonlocking that resolved low concurrency and slow query delays. Reduced latency 92%.',
+      'Utilized a message queue broker (Azure Service Bus) that mitigated error rate 17%, enabled analyzing and recovering failed requests between services.',
       'Engineered and maintained solutions for a number of .NET 6+ REST APIs and Angular single page applications (SPA) that are hosted in Azure cloud-based Service Oriented Architecture (SOA), and used by +30k users.',
-      'Refactored data models with Entity Framework ORM (EF 5+) and generated performant relational database queries in T-SQL using SQL Server (RDBMS) that resulted in ~20% faster response time.',
-      'Scoped and led complex third party integration projects to expand revenue resources, generating +$72k in 6 months.',
-      'Built reusable Angular (v15+) components, utilized lazy loading and caching to accelerate load time. Adhered to Akita state management pattern. Applied UI frameworks like Bootstrap, Angular Material, Tailwind CSS for styling.',
-      'Collaborated with other engineers for technical design and implementation of new features across the stack (backend, frontend and database).',
-      'Utilized Azure pipeline tools to manage CI/CD process that improve software development life cycle (SDLC) reliability.'
+      'Scoped seamless integration projects, generating $7.3M annualy in revenue.',
+      'Diagnosed data redundancy and saved $22,000 annually in storage costs by normalizing the database schema (EF 5+), addressing inefficient resource utilization.',
+      'Overhauled deprecated UI modules, resolving the bottleneck of dependency management and upgrading to Angular v16. Boosted page load time 12%.',
+      'Led design and implemented a customer-facing order tracking feature (.NET 6+, Angular v15+) that increased user retention 10% and drew 35,000 more requests per day.'
     ],
     startDate: '01/2022',
     endDate: 'Present',
     link: 'https://catic.com/'
   },
   {
-    title: 'Atar Cabos',
-    summary: 'Sailing School - Valencia, Spain',
+    title: 'Atar Cabos (Ruby on Rails, Python, JavaScript)',
+    summary:
+      'Sailing academy that offers hands-on, practical courses along with an online study platform for flexible learning.',
     descriptions: [
-      'Architected and developed the database schema and REST API using Ruby on Rails, utilized eager loading with Active Record queries that increased response time by 40%.',
-      'Implemented a robust payment and email process for a B2C platform integrating Stripe and SendGrid, generating over €27k within 6 month.',
-      'Designed a responsive UI with embedded Ruby templates and Bootstrap, provided 30% faster load time with partial rendering and caching.'
+      'Improved query execution performance 40% through ORM (Active Record) eager loading, addressing N+1 query issues that caused network overhead and bottleneck for scaling.',
+      'Employed partial rendering and caching (Ruby on Rails) to enhance mobile user engagement. Reduced bounce rate 27% and increased user acquisition rate 8%.',
+      'Automated a reliable payment process (Stripe) and email notification system (SendGrid) to streamline scaling and reducing operational overhead. Raised conversion rate by 30%.'
     ],
     startDate: '06/2021',
-    endDate: 'Present',
+    endDate: '01/2022',
     link: 'https://atarcabos.com/'
   },
   {
     title: 'Flatiron School',
-    summary: 'Full Stack Web Development Bootcamp - New York, NY',
+    summary: 'Full Stack Web Development Certification - New York, NY',
     descriptions: [
       'Completed JavaScript React and Ruby on Rails full stack web development bootcamp in Flatiron School, NY.',
       'Equipped with strong knowledge of Object Oriented Programming, functional programming, web scraping, data modeling (ORM), RESTful API, design patterns, AJAX, single page applications, DOM, version control, SQL.',
@@ -66,23 +69,11 @@ const steps = [
     link: 'https://apps.apple.com/us/app/moodivation-daily-motivation/id1529743691'
   },
   {
-    title: 'Relocate to US',
-    summary: '',
-    descriptions: [
-      'Moved to US right after graduating to obtain certificates of import and export.',
-      'Obtained TOEFL Certification.',
-      'Drove Uber and Lyft for 5 years in NYC, which convinced me to follow my passion of software development.'
-    ],
-    startDate: '12/2015',
-    endDate: '03/2021',
-    link: undefined
-  },
-  {
     title: 'Istanbul University',
-    summary: 'Bachelors of Engineering - Istanbul, Turkiye',
+    summary: 'Bachelor of Engineering - Istanbul, Turkiye',
     descriptions: [
       'Graduated from Maritime Transportation and Management Engineering (BS) in Istanbul, Turkiye.',
-      'Studied Statistics, Calculus, Differential Equations, MATLAB related to CS.'
+      'Completed studies on Statistics, Calculus, Linear Algebra, Discrete Mathematics, Differential Equations, MATLAB, Physics'
     ],
     startDate: '09/2011',
     endDate: '07/2015',
